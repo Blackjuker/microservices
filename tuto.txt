@@ -1,1 +1,5 @@
 https://www.youtube.com/watch?v=ByYyk8eMG6c
+
+
+pour lancer mongo sur docker : 
+ docker run -d --rm --name mongo -p 27017:27017 -v mongodbdata:/data/db mongo

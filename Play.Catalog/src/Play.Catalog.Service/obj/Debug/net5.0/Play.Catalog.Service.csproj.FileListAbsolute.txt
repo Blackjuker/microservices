@@ -32,3 +32,43 @@ C:\Users\anga\OneDrive - Cyclife\Documents\microS\Play.Catalog\src\Play.Catalog.
 C:\Users\anga\OneDrive - Cyclife\Documents\microS\Play.Catalog\src\Play.Catalog.Service\obj\Debug\net5.0\Play.Catalog.Service.genruntimeconfig.cache
 C:\Users\anga\OneDrive - Cyclife\Documents\microS\Play.Catalog\src\Play.Catalog.Service\obj\Debug\net5.0\ref\Play.Catalog.Service.dll
 C:\Users\anga\OneDrive - Cyclife\Documents\microS\Play.Catalog\src\Play.Catalog.Service\obj\Debug\net5.0\Play.Catalog.Service.sourcelink.json
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net5.0\appsettings.json
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net5.0\Play.Catalog.Service.exe
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net5.0\Play.Catalog.Service.deps.json
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net5.0\Play.Catalog.Service.runtimeconfig.json
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net5.0\Play.Catalog.Service.runtimeconfig.dev.json
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net5.0\Play.Catalog.Service.dll
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net5.0\Play.Catalog.Service.pdb
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net5.0\DnsClient.dll
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net5.0\MongoDB.Bson.dll
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net5.0\MongoDB.Driver.dll
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net5.0\SharpCompress.dll
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net5.0\Snappier.dll
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net5.0\ZstdSharp.dll
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\obj\Debug\net5.0\Play.Catalog.Service.csproj.AssemblyReference.cache
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\obj\Debug\net5.0\Play.Catalog.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\obj\Debug\net5.0\Play.Catalog.Service.AssemblyInfoInputs.cache
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\obj\Debug\net5.0\Play.Catalog.Service.AssemblyInfo.cs
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\obj\Debug\net5.0\Play.Catalog.Service.csproj.CoreCompileInputs.cache
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\obj\Debug\net5.0\Play.Catalog.Service.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\obj\Debug\net5.0\Play.Catalog.Service.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\obj\Debug\net5.0\Play.Catalog.Service.sourcelink.json
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\obj\Debug\net5.0\Play.Catalog.Service.RazorTargetAssemblyInfo.cache
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\obj\Debug\net5.0\scopedcss\bundle\Play.Catalog.Service.styles.css
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\obj\Debug\net5.0\staticwebassets\Play.Catalog.Service.StaticWebAssets.Manifest.cache
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\obj\Debug\net5.0\staticwebassets\Play.Catalog.Service.StaticWebAssets.Pack.cache
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\obj\Debug\net5.0\staticwebassets\msbuild.Play.Catalog.Service.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\obj\Debug\net5.0\staticwebassets\msbuild.build.Play.Catalog.Service.props
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\obj\Debug\net5.0\staticwebassets\msbuild.buildMultiTargeting.Play.Catalog.Service.props
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\obj\Debug\net5.0\staticwebassets\msbuild.buildTransitive.Play.Catalog.Service.props
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\obj\Debug\net5.0\Play.Cat.72A81496.Up2Date
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\obj\Debug\net5.0\Play.Catalog.Service.dll
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\obj\Debug\net5.0\refint\Play.Catalog.Service.dll
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\obj\Debug\net5.0\Play.Catalog.Service.pdb
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\obj\Debug\net5.0\Play.Catalog.Service.genruntimeconfig.cache
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\obj\Debug\net5.0\ref\Play.Catalog.Service.dll
