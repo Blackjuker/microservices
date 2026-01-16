@@ -31,3 +31,4 @@ C:\Users\anga\OneDrive - Cyclife\Documents\microS\Play.Catalog\src\Play.Catalog.
 C:\Users\anga\OneDrive - Cyclife\Documents\microS\Play.Catalog\src\Play.Catalog.Service\obj\Debug\net5.0\Play.Catalog.Service.pdb
 C:\Users\anga\OneDrive - Cyclife\Documents\microS\Play.Catalog\src\Play.Catalog.Service\obj\Debug\net5.0\Play.Catalog.Service.genruntimeconfig.cache
 C:\Users\anga\OneDrive - Cyclife\Documents\microS\Play.Catalog\src\Play.Catalog.Service\obj\Debug\net5.0\ref\Play.Catalog.Service.dll
+C:\Users\anga\OneDrive - Cyclife\Documents\microS\Play.Catalog\src\Play.Catalog.Service\obj\Debug\net5.0\Play.Catalog.Service.sourcelink.json
