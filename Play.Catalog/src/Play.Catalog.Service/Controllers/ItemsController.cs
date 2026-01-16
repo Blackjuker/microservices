@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Play.Catalog.Service.Repositories;
 
 namespace Play.Catalog.Service.Controllers
 {
@@ -9,24 +11,21 @@ namespace Play.Catalog.Service.Controllers
     [Route("items")]
     public class ItemsController : ControllerBase
     {
-        private static readonly List<ItemDto> items = new()
-        {
-            new ItemDto(Guid.NewGuid(), "Item1", "The first item", 9.99m, DateTimeOffset.UtcNow),
-            new ItemDto(Guid.NewGuid(), "Item2", "The second item", 19.99m, DateTimeOffset.UtcNow),
-            new ItemDto(Guid.NewGuid(), "Item3", "The third item", 29.99m, DateTimeOffset.UtcNow)
-        };
+        private readonly ItemsRepository itemsRepository = new();
 
         [HttpGet]
-        public IEnumerable<ItemDto> GetItems()
+        public async Task<IEnumerable<ItemDto>> GetItems()
         {
+            var items = (await itemsRepository.GetAllAsync())
+                        .Select(item => item.AsDto());
             return items;
         }
 
         // Get /items/
         [HttpGet("{id}")]
-        public ActionResult<ItemDto> GetById(Guid id)
+        public async Task<ActionResult<ItemDto>> GetById(Guid id)
         {
-            var item = items.Where(item => item.Id == id).SingleOrDefault();
+            var item = (await itemsRepository.GetAsync(id))?.AsDto();
             if (item == null)
             {
                 return NotFound();
@@ -35,45 +34,46 @@ namespace Play.Catalog.Service.Controllers
         }
 
         [HttpPost]
-        public ActionResult CreateItem(CreateItemDto createItemDto)
+        public async Task<ActionResult> CreateItem(CreateItemDto createItemDto)
         {
-            var item = new ItemDto(Guid.NewGuid(), createItemDto.Name, createItemDto.Description, createItemDto.Price, DateTimeOffset.UtcNow);
-            items.Add(item);
+            var item = new Entities.Item
+            {
+                Id = Guid.NewGuid(),
+                Name = createItemDto.Name,
+                Description = createItemDto.Description,
+                Price = createItemDto.Price,
+                CreatedDate = DateTimeOffset.UtcNow
+            };
+            await itemsRepository.CreateAsync(item);
             return CreatedAtAction(nameof(GetById), new { id = item.Id }, item);
         }
 
         [HttpPut("{id}")]
-        public IActionResult UpdateItem(Guid id, UpdateItemDto updateItemDto)
+        public async Task<IActionResult> PutAsync(Guid id, UpdateItemDto updateItemDto)
         {
-            var existingItem = items.Where(item => item.Id == id).SingleOrDefault();
+            var existingItem = await itemsRepository.GetAsync(id);
             if (existingItem == null)
             {
                 return NotFound();
             }
 
-            var updatedItem = existingItem with
-            {
-                Name = updateItemDto.Name,
-                Description = updateItemDto.Description,
-                Price = updateItemDto.Price
-            };
-
-            var index = items.FindIndex(item => item.Id == id);
-            items[index] = updatedItem;
-
+            existingItem.Name = updateItemDto.Name;
+            existingItem.Description = updateItemDto.Description;
+            existingItem.Price = updateItemDto.Price;
+            await itemsRepository.UpdateAsync(existingItem);
             return NoContent();
         }
 
         [HttpDelete("{id}")]
-        public IActionResult DeleteItem(Guid id)
+        public async Task<IActionResult> DeleteItem(Guid id)
         {
-            var existingItem = items.Where(item => item.Id == id).SingleOrDefault();
+            var existingItem = await itemsRepository.GetAsync(id);
             if (existingItem == null)
             {
                 return NotFound();
             }
 
-            items.Remove(existingItem);
+            await itemsRepository.RemoveAsync(existingItem.Id);
             return NoContent();
         }
     }
