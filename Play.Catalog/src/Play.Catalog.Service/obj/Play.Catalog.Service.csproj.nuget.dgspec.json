@@ -29,6 +29,7 @@
           "C:\\Program Files\\dotnet\\library-packs": {},
           "C:\\SVN\\trunk\\LDC2\\socodei-packages": {},
           "C:\\SVN\\trunk\\Lib": {},
+          "C:\\Users\\ANGA_adm\\Documents\\microservices\\microservices\\packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -53,9 +54,9 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
-            "MongoDB.Driver": {
+            "Play.Common": {
               "target": "Package",
-              "version": "[3.5.2, )"
+              "version": "[1.0.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

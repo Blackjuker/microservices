@@ -72,3 +72,11 @@ C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Ca
 C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\obj\Debug\net5.0\Play.Catalog.Service.pdb
 C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\obj\Debug\net5.0\Play.Catalog.Service.genruntimeconfig.cache
 C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\obj\Debug\net5.0\ref\Play.Catalog.Service.dll
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net5.0\Microsoft.Extensions.Configuration.dll
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net5.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net5.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net5.0\Play.Common.dll
+C:\Users\ANGA_adm\Documents\microservices\microservices\Play.Catalog\src\Play.Catalog.Service\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
