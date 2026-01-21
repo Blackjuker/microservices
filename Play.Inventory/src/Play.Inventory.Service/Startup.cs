@@ -10,6 +10,7 @@ using Microsoft.OpenApi.Models;
 using Play.Common.MongoDB;
 using Play.Inventory.Service.Clients;
 using Polly;
+using Polly.Timeout;
 
 namespace Play.Inventory.Service
 {
@@ -33,7 +34,7 @@ namespace Play.Inventory.Service
                 {
                     client.BaseAddress = new Uri("https://localhost:5001");
                 })
-                .AddTransientHttpErrorPolicy(builder => builder.WaitAndRetryAsync(5, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)),
+                .AddTransientHttpErrorPolicy(builder => builder.Or<TimeoutRejectedException>().WaitAndRetryAsync(5, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)),
                  onRetry: (outcome, timespan, retryAttempt, context) => 
                  {
                      //log details of the retry
