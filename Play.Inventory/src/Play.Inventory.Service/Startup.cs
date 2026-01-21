@@ -46,6 +46,22 @@ namespace Play.Inventory.Service
                      serviceProvider.GetService<ILogger<CatalogClient>>() ?
                         .LogWarning($"Delai de {timespan.TotalSeconds} secondes avant la tentative de retry {retryAttempt}.");
                  }))
+                 .AddTransientHttpErrorPolicy(builder =>builder.Or<TimeoutRejectedException>().CircuitBreakerAsync(
+                    3,
+                    TimeSpan.FromSeconds(15),
+                    onBreak: (outcome, timespan) =>
+                    {
+                        var serviceProvider = services.BuildServiceProvider();
+                        serviceProvider.GetService<ILogger<CatalogClient>>() ?
+                            .LogWarning($"Le circuit est ouvert pendant {timespan.TotalSeconds} secondes en raison de {outcome.Exception?.Message}.");
+                    },
+                    onReset: () =>
+                    {
+                        var serviceProvider = services.BuildServiceProvider();
+                        serviceProvider.GetService<ILogger<CatalogClient>>() ?
+                            .LogWarning("Le circuit est fermé à nouveau, les appels peuvent reprendre.");
+                    }
+                 ))
                 .AddPolicyHandler(Policy.TimeoutAsync<HttpResponseMessage>(TimeSpan.FromSeconds(1))); // Attendre 1 seconde maximum pour une réponse avant d'abandonner 
             
             services.AddControllers();
