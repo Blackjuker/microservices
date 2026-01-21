@@ -1,10 +1,15 @@
+using System;
+using System.Net.Http;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Play.Common.MongoDB;
+using Play.Inventory.Service.Clients;
+using Polly;
 
 namespace Play.Inventory.Service
 {
@@ -23,6 +28,21 @@ namespace Play.Inventory.Service
 
             services.AddMongo()
                 .AddMongoRepository<Entities.InventoryItem>("inventoryitems");
+
+                services.AddHttpClient<CatalogClient>(client =>
+                {
+                    client.BaseAddress = new Uri("https://localhost:5001");
+                })
+                .AddTransientHttpErrorPolicy(builder => builder.WaitAndRetryAsync(5, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)),
+                 onRetry: (outcome, timespan, retryAttempt, context) => 
+                 {
+                     //log details of the retry
+                     var serviceProvider = services.BuildServiceProvider();
+                     serviceProvider.GetService<ILogger<CatalogClient>>() ?
+                        .LogWarning($"Delai de {timespan.TotalSeconds} secondes avant la tentative de retry {retryAttempt}.");
+                 }))
+                .AddPolicyHandler(Policy.TimeoutAsync<HttpResponseMessage>(TimeSpan.FromSeconds(1))); // Attendre 1 seconde maximum pour une réponse avant d'abandonner 
+            
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
