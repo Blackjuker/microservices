@@ -2,10 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MassTransit;
 using Microsoft.AspNetCore.Mvc;
 using Play.Catalog.Service.Entities;
+using Play.Catalog.Contracts;
 using Play.Common;
-
 namespace Play.Catalog.Service.Controllers
 {
     [ApiController]
@@ -13,34 +14,20 @@ namespace Play.Catalog.Service.Controllers
     public class ItemsController : ControllerBase
     {
         private readonly IRepository<Item> itemsRepository;
-        private static int requestCounter = 0;
+        private readonly IPublishEndpoint publishEndpoint;
+        
 
-        public ItemsController(IRepository<Item> itemsRepository)
+        public ItemsController(IRepository<Item> itemsRepository, IPublishEndpoint publishEndpoint)
         {
             this.itemsRepository = itemsRepository; 
+            this.publishEndpoint = publishEndpoint;
         }
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ItemDto>>> GetItems()
         {
-            requestCounter++;
-            Console.WriteLine($"Request {requestCounter}: Starting ...");
-            if(requestCounter <= 2)
-            {
-                Console.WriteLine($"Request {requestCounter}: Delaying ...");
-                await Task.Delay(TimeSpan.FromSeconds(10));
-            }
-
-            if(requestCounter <= 4)
-            {
-                Console.WriteLine($"Request {requestCounter}: 500 (internal server error) ...");
-                return StatusCode(500);
-            }
-
             var items = (await itemsRepository.GetAllAsync())
                         .Select(item => item.AsDto());
-
-            Console.WriteLine($"Request {requestCounter}: 200 (OK) ...");
             return Ok(items);
         }
 
@@ -57,7 +44,7 @@ namespace Play.Catalog.Service.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> CreateItem(CreateItemDto createItemDto)
+        public async Task<ActionResult<ItemDto>> PostAsync(CreateItemDto createItemDto)
         {
             var item = new Entities.Item
             {
@@ -68,6 +55,7 @@ namespace Play.Catalog.Service.Controllers
                 CreatedDate = DateTimeOffset.UtcNow
             };
             await itemsRepository.CreateAsync(item);
+            await publishEndpoint.Publish(new CatalogItemUpdate(item.Id, item.Name, item.Description));
             return CreatedAtAction(nameof(GetById), new { id = item.Id }, item);
         }
 
