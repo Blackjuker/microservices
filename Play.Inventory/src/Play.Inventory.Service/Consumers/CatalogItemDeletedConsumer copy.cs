@@ -24,10 +24,7 @@ namespace Play.Inventory.Service.Consumers
             {
                 return;
             }
-            else
-            {
                 await repository.RemoveAsync(item.Id);
-            }
 
             
         }
